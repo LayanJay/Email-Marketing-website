@@ -1,0 +1,37 @@
+import { Button, Grid } from "@material-ui/core";
+import React from "react";
+import Navbar from "./Navbar";
+import "./Header.css";
+
+function Header() {
+  return (
+    <div className="header">
+      <Navbar />
+      <Grid md container>
+        <Grid item md sm={12} xs={12} className="header__paper">
+          <div className="header__title">All in one</div>
+          <div className="header__title">Email Marketing Softwear</div>
+          <div className="header__subTitle">
+            see why 100,000 customer love us
+          </div>
+          <Button
+            style={{
+              backgroundColor: "#fdd835",
+              color: "#001835",
+              marginTop: "1rem",
+              marginLeft: "1rem",
+              padding: "0.7rem 1.5rem",
+            }}
+          >
+            Sign up
+          </Button>
+        </Grid>
+        <Grid md sm={12} xs={12} className="paper">
+          {/* <img src={} alt=""/> */}
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
+
+export default Header;
