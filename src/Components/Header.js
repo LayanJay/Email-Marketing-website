@@ -2,13 +2,14 @@ import { Button, Grid } from "@material-ui/core";
 import React from "react";
 import Navbar from "./Navbar";
 import "./Header.css";
+import mail from "../Assets/mail.svg";
 
 function Header() {
   return (
     <div className="header">
       <Navbar />
       <Grid md container>
-        <Grid item md sm={12} xs={12} className="header__paper">
+        <Grid container md sm={12} xs={12} className="header__title-paper">
           <div className="header__title">All in one</div>
           <div className="header__title">Email Marketing Softwear</div>
           <div className="header__subTitle">
@@ -26,8 +27,16 @@ function Header() {
             Sign up
           </Button>
         </Grid>
-        <Grid md sm={12} xs={12} className="paper">
-          {/* <img src={} alt=""/> */}
+        <Grid
+          container
+          justify="center"
+          alignItems="flex-start"
+          md
+          sm={12}
+          xs={12}
+          className="header__mail-paper"
+        >
+          <img className="header__mail-img" src={mail} alt="mail" />
         </Grid>
       </Grid>
     </div>

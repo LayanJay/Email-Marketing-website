@@ -1,10 +1,74 @@
-import { Button, Grid, IconButton } from "@material-ui/core";
-import React from "react";
+import {
+  Button,
+  Divider,
+  Drawer,
+  Grid,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  makeStyles,
+} from "@material-ui/core";
+import React, { useState } from "react";
+import clsx from "clsx";
 import menu from "../Assets/menu.svg";
 import logo from "../Assets/logo.svg";
 import "./Navbar.css";
 
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+    height: "100%",
+    backgroundColor: "#0074FC",
+    color: "#eee",
+    fontWeight: 500,
+  },
+});
+
 function Navbar() {
+  const classes = useStyles();
+  const [state, setState] = useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = () => (
+    <div
+      className={clsx(classes.list)}
+      role="presentation"
+      onClick={toggleDrawer("right", false)}
+      onKeyDown={toggleDrawer("right", false)}
+    >
+      <List>
+        {["Home", "About", "Contact"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        <ListItem
+          style={{ backgroundColor: "#fdd835", color: "#001835" }}
+          button
+          key="signin"
+        >
+          <ListItemText primary="Sign in" />
+        </ListItem>
+      </List>
+    </div>
+  );
+
   return (
     <Grid container md>
       <Grid sm xs className="nav">
@@ -53,9 +117,20 @@ function Navbar() {
             </Button>
           </div>
           <div className="nav__menu">
-            <IconButton color="primary">
+            <IconButton onClick={toggleDrawer("right", true)} color="primary">
               <img src={menu} alt="menu-btn" style={{ width: "1.8rem" }} />
             </IconButton>
+            <div>
+              <React.Fragment key="right">
+                <Drawer
+                  anchor="right"
+                  open={state["right"]}
+                  onClose={toggleDrawer("right", false)}
+                >
+                  {list("right")}
+                </Drawer>
+              </React.Fragment>
+            </div>
           </div>
         </div>
       </Grid>
