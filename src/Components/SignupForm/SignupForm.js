@@ -7,6 +7,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import React from "react";
+import useWindowsPosition from "../../Hooks/useWindowPosition";
 import "./SignupForm.css";
 import signup from "../../Assets/signin.svg";
 
@@ -32,9 +33,15 @@ function SignupForm() {
     },
   }));
 
+  const checked = useWindowsPosition("header");
   const classes = useStyles();
   return (
-    <Fade in={true} timeout={1000}>
+    <Fade
+      in={checked}
+      timeout={1000}
+      //style={{ transformOrigin: "0 0 0" }}
+      //{...(checked ? { timeout: 1000 } : {})}
+    >
       <Grid container className="signup" id="signup">
         <Grid container md sm className="signup__grid pattern">
           <Grid container md sm xs={12} className="signup__grid-form">

@@ -6,7 +6,7 @@ import mail from "../../Assets/mail.svg";
 
 function Header() {
   return (
-    <div className="header">
+    <div className="header" id="header">
       <Navbar />
       <Fade in={true} {...{ timeout: 1000 }}>
         <Grid md container>
