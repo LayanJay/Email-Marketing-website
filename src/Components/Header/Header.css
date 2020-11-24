@@ -1,5 +1,6 @@
 .header{
     min-height: 100vh;
+    background-color: #001835;
 }
 
 .header__title-paper{
@@ -10,7 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .header__mail-paper{
@@ -35,16 +36,29 @@
     width: 400px;
 }
 
+@media screen and (max-width: 900px){
+    .header__mail-img{
+        width: 20rem;
+    }
+
+}
+
 @media screen and (max-width: 768px){
     .header__title-paper{
         margin: 5rem 0rem 0 0;
     }
 
+    .header__title{
+        font-size: 2rem;
+        font-weight: 700;
+        padding-left: 0.8rem;
+    }
+
     .header__mail-paper{
-        margin: 4rem 0 0 0;
+        margin: 3rem 0 1rem 0;
     }
 
     .header__mail-img{
-        width: 10rem;
+        width: 13rem;
     }
 }

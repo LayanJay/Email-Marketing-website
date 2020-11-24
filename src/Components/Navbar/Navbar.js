@@ -11,8 +11,8 @@ import {
 } from "@material-ui/core";
 import React, { useState } from "react";
 import clsx from "clsx";
-import menu from "../Assets/menu.svg";
-import logo from "../Assets/logo.svg";
+import menu from "../../Assets/menu.svg";
+import logo from "../../Assets/logo.svg";
 import "./Navbar.css";
 
 const useStyles = makeStyles({
