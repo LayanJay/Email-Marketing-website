@@ -51,6 +51,10 @@
 }
 
 @media screen and (max-width: 768px){
+    .signup__grid-form{
+        margin-top: 4rem;
+    }
+    
     .signup__grid-img{
         display: flex;
         justify-content: center;

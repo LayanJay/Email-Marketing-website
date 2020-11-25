@@ -105,7 +105,7 @@ function Navbar() {
                   padding: "0.7rem 1.5rem",
                 }}
               >
-                About
+                Our Story
               </Button>
             </Link>
             <Link to="/Contact" className="link" style={{ color: "#fff" }}>
