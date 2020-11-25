@@ -10,6 +10,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import clsx from "clsx";
 import menu from "../../Assets/menu.svg";
 import logo from "../../Assets/logo.svg";
@@ -50,71 +51,90 @@ function Navbar() {
       onKeyDown={toggleDrawer("right", false)}
     >
       <List>
-        {["Home", "About", "Contact"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
+        {["FAQ", "About", "Contact"].map((text, index) => (
+          <Link to={`/${text}`} className="link" style={{ color: "#fff" }}>
+            <ListItem button key={text}>
+              <ListItemText primary={text} />
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
       <List>
-        <ListItem
-          style={{ backgroundColor: "#fdd835", color: "#001835" }}
-          button
-          key="signin"
-        >
-          <ListItemText primary="Sign in" />
-        </ListItem>
+        <Link to="/SigninForm" className="link" style={{ color: "#001835" }}>
+          <ListItem
+            style={{ backgroundColor: "#fdd835", color: "#001835" }}
+            button
+            key="signin"
+          >
+            <ListItemText primary="Sign in" />
+          </ListItem>
+        </Link>
       </List>
     </div>
   );
 
   return (
-    <Grid container md>
+    <Grid container md className="nav__grid">
       <Grid sm xs className="nav">
-        <div className="nav__logo-div">
-          <img src={logo} alt="logo" style={{ width: "3rem" }} />
-          <div className="nav__title">DAS</div>
-        </div>
+        <Link to="/" className="link">
+          <div className="nav__logo-div">
+            <img src={logo} alt="logo" style={{ width: "3rem" }} />
+            <div className="nav__title">DAS</div>
+          </div>
+        </Link>
+
         <div className="nav__links">
           <div className="nav__btns">
-            <Button
-              style={{
-                color: "#eee",
-                marginRight: "1rem",
-                padding: "0.7rem 1.5rem",
-              }}
+            <Link to="/FAQ" className="link" style={{ color: "#fff" }}>
+              <Button
+                style={{
+                  color: "#eee",
+                  marginRight: "1rem",
+                  padding: "0.7rem 1.5rem",
+                }}
+              >
+                FAQ
+              </Button>
+            </Link>
+            <Link to="/About" className="link" style={{ color: "#fff" }}>
+              <Button
+                style={{
+                  color: "#eee",
+                  marginRight: "1rem",
+                  padding: "0.7rem 1.5rem",
+                }}
+              >
+                About
+              </Button>
+            </Link>
+            <Link to="/Contact" className="link" style={{ color: "#fff" }}>
+              <Button
+                style={{
+                  color: "#eee",
+                  marginRight: "1rem",
+                  padding: "0.7rem 1.5rem",
+                }}
+              >
+                Contact
+              </Button>
+            </Link>
+            <Link
+              to="/SigninForm"
+              className="link"
+              style={{ color: "#001835" }}
             >
-              Home
-            </Button>
-            <Button
-              style={{
-                color: "#eee",
-                marginRight: "1rem",
-                padding: "0.7rem 1.5rem",
-              }}
-            >
-              About
-            </Button>
-            <Button
-              style={{
-                color: "#eee",
-                marginRight: "1rem",
-                padding: "0.7rem 1.5rem",
-              }}
-            >
-              Contact
-            </Button>
-            <Button
-              style={{
-                backgroundColor: "#fdd835",
-                color: "#001835",
-                marginRight: "1rem",
-                padding: "0.7rem 1.5rem",
-              }}
-            >
-              Sign in
-            </Button>
+              <Button
+                style={{
+                  backgroundColor: "#fdd835",
+                  color: "#001835",
+                  marginRight: "1rem",
+                  padding: "0.7rem 1.5rem",
+                }}
+              >
+                Sign in
+              </Button>
+            </Link>
           </div>
           <div className="nav__menu">
             <IconButton onClick={toggleDrawer("right", true)} color="primary">
