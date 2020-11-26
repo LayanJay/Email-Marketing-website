@@ -1,5 +1,5 @@
 .about{
-    background-color: #fff;
+    background-color: #eee;
     padding: 1rem;
 }
 
@@ -27,3 +27,31 @@
     width: 40rem;
 }
 
+@media screen and (max-width: 960px){
+    .about__img{
+        width: 30rem;
+    }
+
+    .about__img-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+
+    .about__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .about__img{
+        width: 18rem;
+    }
+    
+}

@@ -10,6 +10,25 @@ import React from "react";
 import useWindowsPosition from "../../Hooks/useWindowPosition";
 import "./SignupForm.css";
 import signup from "../../Assets/signin.svg";
+import { AnimatePresence, motion } from "framer-motion";
+
+//motion transitions
+const img_variant = {
+  init: {
+    opacity: 0,
+    x: "20vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.8,
+      type: "spring",
+      stiffness: 90,
+    },
+  },
+};
 
 function SignupForm() {
   const CssTextField = withStyles({
@@ -87,7 +106,15 @@ function SignupForm() {
             </form>
           </Grid>
           <Grid container md xs={12} className="signup__grid signup__grid-img">
-            <img className="signup__img" src={signup} alt="signup" />
+            {checked && (
+              <motion.div
+                variants={img_variant}
+                initial="init"
+                animate="visible"
+              >
+                <img className="signup__img" src={signup} alt="signup" />
+              </motion.div>
+            )}
           </Grid>
         </Grid>
       </Grid>
