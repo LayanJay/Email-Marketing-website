@@ -30,7 +30,8 @@
 }
 
 .login__form-img1{
-    width: 25rem;
+    width: 20rem;
+    transition: 0.2s ease;
 }
 
 .login__form-copyright{
@@ -50,6 +51,7 @@
 
 .login__guide-img2{
     width: 40rem;
+    transition: 0.2s ease;
 }
 
 .login__guide-text{
@@ -59,9 +61,69 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .login__guide-subtext{
     text-align: center;
     padding: 2rem 0;
+}
+
+@media screen and (max-width: 1200px){
+    .login__guide-img2{
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .login__form{
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login__form-subtext{
+        text-align: center;
+    }
+
+    .login__form-img1{
+        width: 20rem;
+        transition: 0.2s ease;
+    }
+
+    .login__guide-img2{
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .login__form{
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login__form-copyright{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .login__form{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login__form-img1{
+        width: 15rem;
+        transition: 0.2s ease;
+    }
+
+    .login__guide-img2{
+        width: 15rem;
+    }
 }

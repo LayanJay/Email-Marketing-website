@@ -1,15 +1,63 @@
 import { Button, Grid, TextField } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import signin from "../../Assets/signin.svg";
 import guide_customers from "../../Assets/guide_customers.svg";
 import "./SigninForm.css";
 
+//motion variants
+const container = {
+  init: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+
+const imgVariant = {
+  init: {
+    opacity: 0,
+    y: "3vw",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.7,
+      type: "spring",
+      // ease: "linear",
+      stiffness: 90,
+    },
+  },
+};
+
+const textVariant = {
+  init: {
+    opacity: 0,
+    y: "3vw",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 function SigninForm() {
   return (
-    <div className="login">
+    <motion.div
+      variants={container}
+      initial="init"
+      animate="visible"
+      className="login"
+    >
       <Grid container>
-        <Grid container md={4} xs={12} className="login__form">
+        <Grid container md={4} sm={12} xs={12} className="login__form">
           <h1 className="login__form-title">Log In</h1>
           <div className="login__form-subtext">
             Need a DAS account?{" "}
@@ -46,33 +94,61 @@ function SigninForm() {
           <Link className="login__form-link" style={{ marginBottom: "1rem" }}>
             Forgot Password?
           </Link>
-          <div style={{ margin: "0 auto" }}>
+          <motion.div
+            variants={imgVariant}
+            initial="init"
+            animate="visible"
+            style={{ margin: "0 auto" }}
+          >
             <img className="login__form-img1" src={signin} alt="signin" />
-          </div>
+          </motion.div>
           <div className="login__form-copyright">
             ©2020 All Rights Reserved. DAS® is a registered trademark of The LJ
             team.
           </div>
         </Grid>
         <Grid container md xs={12} className="login__guide">
-          <div>
+          <motion.div variants={imgVariant} initial="init" animate="visible">
             <img
               className="login__guide-img2"
               src={guide_customers}
               alt="guide_customers"
             />
-          </div>
+          </motion.div>
           <div className="login__guide-text">
-            <h2>Guide your customers from prospect to purchase.</h2>
-            <div className="login__guide-subtext">
+            <motion.h2
+              variants={textVariant}
+              initial="init"
+              animate="visible"
+              transition={{
+                delay: 0.4,
+                duration: 0.7,
+                type: "spring",
+                stiffness: 90,
+              }}
+            >
+              Guide your customers from prospect to purchase.
+            </motion.h2>
+            <motion.div
+              variants={textVariant}
+              initial="init"
+              animate="visible"
+              transition={{
+                delay: 0.6,
+                duration: 0.7,
+                type: "spring",
+                stiffness: 90,
+              }}
+              className="login__guide-subtext"
+            >
               Create behavior-based experiences for your audience. Our Customer
               Journey builder helps you nurture relationships and drive action
               with automations.
-            </div>
+            </motion.div>
           </div>
         </Grid>
       </Grid>
-    </div>
+    </motion.div>
   );
 }
 
