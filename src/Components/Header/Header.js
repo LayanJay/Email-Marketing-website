@@ -3,6 +3,7 @@ import React from "react";
 import "./Header.css";
 import mail from "../../Assets/mail.svg";
 import { motion } from "framer-motion";
+import Navbar from "../Navbar/Navbar";
 
 const title_variants = {
   init: {
@@ -35,6 +36,7 @@ const img_variant = {
 function Header() {
   return (
     <div className="header" id="header">
+      <Navbar />
       <Grid md container>
         <Grid container md sm={12} xs={12} className="header__title-paper">
           <motion.div
@@ -100,7 +102,7 @@ function Header() {
                 padding: "0.7rem 1.5rem",
               }}
             >
-              Sign up
+              pick a plan
             </Button>
           </motion.div>
         </Grid>

@@ -1,0 +1,67 @@
+.login{
+    min-height: 100vh;
+    background-color: #eee;
+}
+
+.login__form{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.login__form-title{
+    padding: 2rem 0;
+}
+
+.login__form-subtext{
+    padding-bottom: 2rem;
+}
+
+.login__form-link{
+    text-decoration: none;
+    color: #001835;
+}
+
+.login__form-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.login__form-img1{
+    width: 25rem;
+}
+
+.login__form-copyright{
+    padding: 2rem 0;
+    font-size: 0.8rem;
+    color:#303030;
+}
+
+.login__guide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    background-color: #F9D51C;
+}
+
+.login__guide-img2{
+    width: 40rem;
+}
+
+.login__guide-text{
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__guide-subtext{
+    text-align: center;
+    padding: 2rem 0;
+}

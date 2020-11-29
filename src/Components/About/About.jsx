@@ -10,6 +10,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import about from "../../Assets/about.svg";
 import "./About.css";
+import Navbar from "../Navbar/Navbar";
 
 // motion varients
 const container = {
@@ -66,8 +67,9 @@ function About() {
       variants={container}
       initial="init"
       animate="visible"
-      className="about"
+      className="about about__pattern"
     >
+      <Navbar />
       <Grid container md={11} className="about__container">
         <h1 className="about__title">Our Story</h1>
         <div className="about__desc">
@@ -112,7 +114,7 @@ function About() {
           >
             Learn more about DAS
           </motion.h2>
-          <List component="nav" aria-label="main mailbox folders">
+          <List>
             {[
               "Founder Story",
               "Culture",

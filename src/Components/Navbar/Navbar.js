@@ -51,7 +51,7 @@ function Navbar() {
       onKeyDown={toggleDrawer("right", false)}
     >
       <List>
-        {["FAQ", "About", "Contact"].map((text, index) => (
+        {["About", "Contact", "Log In"].map((text, index) => (
           <Link to={`/${text}`} className="link" style={{ color: "#fff" }}>
             <ListItem button key={text}>
               <ListItemText primary={text} />
@@ -86,17 +86,6 @@ function Navbar() {
 
         <div className="nav__links">
           <div className="nav__btns">
-            <Link to="/FAQ" className="link" style={{ color: "#fff" }}>
-              <Button
-                style={{
-                  color: "#eee",
-                  marginRight: "1rem",
-                  padding: "0.7rem 1.5rem",
-                }}
-              >
-                FAQ
-              </Button>
-            </Link>
             <Link to="/About" className="link" style={{ color: "#fff" }}>
               <Button
                 style={{
@@ -119,8 +108,19 @@ function Navbar() {
                 Contact
               </Button>
             </Link>
+            <Link to="/SigninForm" className="link" style={{ color: "#fff" }}>
+              <Button
+                style={{
+                  color: "#eee",
+                  marginRight: "1rem",
+                  padding: "0.7rem 1.5rem",
+                }}
+              >
+                Log In
+              </Button>
+            </Link>
             <Link
-              to="/SigninForm"
+              to="/SignupForm"
               className="link"
               style={{ color: "#001835" }}
             >
@@ -132,7 +132,7 @@ function Navbar() {
                   padding: "0.7rem 1.5rem",
                 }}
               >
-                Sign in
+                Sign Up
               </Button>
             </Link>
           </div>

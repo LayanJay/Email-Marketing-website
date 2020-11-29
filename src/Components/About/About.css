@@ -1,6 +1,13 @@
 .about{
     background-color: #eee;
-    padding: 1rem;
+    min-height: 110vh;
+}
+
+.about__pattern{
+    background-image: url('../../Assets/pattern_right.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: contain; */
 }
 
 .about__container{
@@ -8,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 1rem;
     margin: 0 auto;
 }
 
