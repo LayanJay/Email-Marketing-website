@@ -12,8 +12,8 @@ import {
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import menu from "../../Assets/menu.svg";
-import logo from "../../Assets/logo.svg";
+import menu from "../../Assets/navbar/menu.svg";
+import logo from "../../Assets/navbar/logo.svg";
 import "./Navbar.css";
 
 const useStyles = makeStyles({
@@ -52,7 +52,11 @@ function Navbar() {
     >
       <List>
         {["About", "Contact", "Log In"].map((text, index) => (
-          <Link to={`/${text}`} className="link" style={{ color: "#fff" }}>
+          <Link
+            to={text == "Log In" ? "/SigninForm" : `/${text}`}
+            className="link"
+            style={{ color: "#fff" }}
+          >
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
@@ -61,13 +65,13 @@ function Navbar() {
       </List>
       <Divider />
       <List>
-        <Link to="/SigninForm" className="link" style={{ color: "#001835" }}>
+        <Link to="/SignupForm" className="link" style={{ color: "#001835" }}>
           <ListItem
             style={{ backgroundColor: "#fdd835", color: "#001835" }}
             button
-            key="signin"
+            key="signun"
           >
-            <ListItemText primary="Sign in" />
+            <ListItemText primary="Sign up" />
           </ListItem>
         </Link>
       </List>

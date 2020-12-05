@@ -2,8 +2,8 @@ import { Button, Grid, TextField } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import signin from "../../Assets/signin.svg";
-import guide_customers from "../../Assets/guide_customers.svg";
+import signin from "../../Assets/signin/signin.svg";
+import guide_customers from "../../Assets/signin/guide_customers.svg";
 import "./SigninForm.css";
 
 //motion variants
@@ -88,10 +88,14 @@ function SigninForm() {
                 padding: "0.7rem 1.5rem",
               }}
             >
-              Sign Up
+              Sign In
             </Button>
           </form>
-          <Link className="login__form-link" style={{ marginBottom: "1rem" }}>
+          <Link
+            to="/SignupForm"
+            className="login__form-link"
+            style={{ marginBottom: "1rem" }}
+          >
             Forgot Password?
           </Link>
           <motion.div
