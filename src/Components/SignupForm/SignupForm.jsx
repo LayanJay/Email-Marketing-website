@@ -1,8 +1,46 @@
 import { Button, Grid, TextField } from "@material-ui/core";
+import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 import welcome from "../../Assets/welcome.svg";
 import "./SignupForm.css";
+
+//motion variants
+const container = {
+  init: {
+    opacity: 0,
+    y: "5vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.8,
+      type: "spring",
+      // ease: "linear",
+      stiffness: 100,
+    },
+  },
+};
+
+const imgVariant = {
+  init: {
+    opacity: 0,
+    x: "5vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.7,
+      type: "spring",
+      // ease: "linear",
+      stiffness: 100,
+    },
+  },
+};
 
 function SignupForm() {
   return (
@@ -17,7 +55,9 @@ function SignupForm() {
           alignItems="center"
           className="signup__greet"
         >
-          <img className="signup__greet-img" src={welcome} alt="welcome" />
+          <motion.div variants={imgVariant} initial="init" animate="visible">
+            <img className="signup__greet-img" src={welcome} alt="welcome" />
+          </motion.div>
         </Grid>
         <Grid
           container
@@ -26,7 +66,12 @@ function SignupForm() {
           xs={12}
           className="signup__form signup__form-pattern"
         >
-          <form className="signup__form-form">
+          <motion.form
+            variants={container}
+            initial="init"
+            animate="visible"
+            className="signup__form-form"
+          >
             <h1 className="signup__form-title">Welcome to DAS</h1>
             <div className="signup__form-div-subtext">
               <div className="signup__form-subtext">
@@ -80,7 +125,7 @@ function SignupForm() {
             >
               Sign up
             </Button>
-          </form>
+          </motion.form>
         </Grid>
       </Grid>
     </div>

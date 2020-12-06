@@ -20,7 +20,8 @@
 
 .login__form-link{
     text-decoration: none;
-    color: #001835;
+    color: #0074FC;
+    font-weight: 500;
 }
 
 .login__form-form{
