@@ -1,0 +1,137 @@
+.contact{
+    min-height: 100vh;
+    background-color: #eee;
+}
+
+.contact__header{
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    /* justify-content: center; */
+    background-image: url('../../Assets/contact/circle_top.png');
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.title-position{
+    width: 60%;
+}
+
+.contact__header-title{
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.contact__header-subtext{
+    color: #303030;
+    margin: 1rem 0 2rem 0;
+}
+
+.contact__header-img{
+    width: 60%;
+    margin-bottom: 2rem;
+}
+
+.contact__inquiry{
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../Assets/contact/circle_bottom.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.contact__inquiry-title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact__inquiry-form{
+    width: 40rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+@media screen and (max-width: 960px){
+    .contact__header{
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    
+    .title-position{
+        width: 70%;
+    }
+    .contact__header-img{
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .contact__header{
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        /* justify-content: center; */
+        background-size: contain;
+    }
+    
+    .title-position{
+        width: 80%;
+    }
+    .contact__header-img{
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    .contact__header-title{
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .contact__inquiry-title{
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .contact__header{
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        /* justify-content: center; */
+        background-size: contain;
+    }
+    
+    .title-position{
+        width: 90%;
+    }
+    .contact__header-img{
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    .contact__inquiry-form{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

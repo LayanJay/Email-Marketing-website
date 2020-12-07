@@ -22,7 +22,7 @@ const container = {
 const imgVariant = {
   init: {
     opacity: 0,
-    y: "3vw",
+    y: "3vh",
   },
   visible: {
     opacity: 1,
@@ -40,7 +40,7 @@ const imgVariant = {
 const textVariant = {
   init: {
     opacity: 0,
-    y: "3vw",
+    y: "3vh",
   },
   visible: {
     opacity: 1,
