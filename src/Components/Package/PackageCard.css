@@ -1,0 +1,39 @@
+.packageCard{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 2.5rem 3rem;
+    margin: 2rem;
+    border: 2px solid #001835;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+.packageCard--content{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: baseline; 
+}
+
+.packageCard--title{
+    margin: .5rem 0 1rem 0;
+    font-size: 32px;
+}
+
+.packageCard--description{
+    font-size: 16px;
+    margin: 0 0 1rem 0;
+}
+
+.packageCard--price{
+    font-size: 20px;
+    margin: 0 0 1rem 0;
+}
+
+.packageCard--subtext{
+    font-size: 16px;
+    margin: 1rem 0  ;
+}

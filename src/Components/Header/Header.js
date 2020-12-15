@@ -4,6 +4,7 @@ import "./Header.css";
 import mail from "../../Assets/mail.svg";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const title_variants = {
   init: {
@@ -92,18 +93,19 @@ function Header() {
               stiffness: 90,
             }}
           >
-            <Button
-              href="#signup"
-              style={{
-                backgroundColor: "#fdd835",
-                color: "#001835",
-                marginTop: "1rem",
-                marginLeft: "1rem",
-                padding: "0.7rem 1.5rem",
-              }}
-            >
-              pick a plan
-            </Button>
+            <Link to="/Package" className="header__link">
+              <Button
+                style={{
+                  backgroundColor: "#fdd835",
+                  color: "#001835",
+                  marginTop: "1rem",
+                  marginLeft: "1rem",
+                  padding: "0.7rem 1.5rem",
+                }}
+              >
+                pick a plan
+              </Button>
+            </Link>
           </motion.div>
         </Grid>
         <Grid

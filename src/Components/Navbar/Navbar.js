@@ -53,7 +53,7 @@ function Navbar() {
       <List>
         {["About", "Contact", "Log In"].map((text, index) => (
           <Link
-            to={text == "Log In" ? "/SigninForm" : `/${text}`}
+            to={text === "Log In" ? "/SigninForm" : `/${text}`}
             className="link"
             style={{ color: "#fff" }}
           >

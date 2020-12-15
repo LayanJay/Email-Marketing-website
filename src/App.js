@@ -5,6 +5,7 @@ import Contact from "./Components/Contact/Contact";
 import About from "./Components/About/About";
 import SigninForm from "./Components/SigninForm/SigninForm";
 import SignupForm from "./Components/SignupForm/SignupForm";
+import Package from "./Components/Package/Package";
 import Home from "./Home";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/Contact" exact component={Contact} />
         <Route path="/SigninForm" exact component={SigninForm} />
         <Route path="/SignupForm" exact component={SignupForm} />
+        <Route path="/Package" exact component={Package} />
       </Switch>
     </div>
   );

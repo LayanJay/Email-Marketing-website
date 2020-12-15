@@ -32,6 +32,10 @@
     padding-left: 1rem;
 }
 
+.header__link{
+    text-decoration: none;
+}
+
 .header__mail-img{
     width: 400px;
 }
