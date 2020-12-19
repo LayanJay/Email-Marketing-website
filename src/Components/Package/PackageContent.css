@@ -1,6 +1,8 @@
 .packageContent{
     padding: 1rem;
-    min-height: 100vh;
+    /* min-height: 90vh; */
+    height: 80vh;
+    margin: 100px 0;
     background-image: url('../../Assets/Ellipse.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -38,10 +40,10 @@
 @media screen and (max-width: 768px){
     .packageContent{
         padding: 1rem;
-        min-height: 90vh;
+        min-height: 50vh;
         background-image: url('../../Assets/Ellipse.svg');
         background-repeat: no-repeat;
-        background-position: left;
+        background-position: center;
     }
 
     .packageContent--image{
@@ -66,7 +68,7 @@
 @media screen and (max-width: 600px){
     .packageContent{
         padding: 1rem;
-        min-height: 80vh;
+        min-height: 50vh;
         background-image: url('../../Assets/Ellipse.svg');
         background-repeat: no-repeat;
         background-position: right;

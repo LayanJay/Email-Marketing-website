@@ -56,7 +56,7 @@ function Package() {
         justify="center"
         alignItems="center"
         direction="column"
-        className="package--header"
+        className="package--header header--styles"
       >
         <h1>We Make Your Idea</h1>
         <h1>Happen</h1>
