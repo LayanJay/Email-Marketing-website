@@ -1,0 +1,86 @@
+.packageContent{
+    padding: 1rem;
+    min-height: 100vh;
+    background-image: url('../../Assets/Ellipse.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s ease;
+}
+
+/* .packageContent--image-grid{
+    padding: 1rem;
+} */
+
+.packageContent--image{
+    width: 400px;
+    padding: 1rem;
+    transition: 0.2s ease;
+}
+
+.position{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    min-width: 300px;
+}
+
+.packageContent--title{
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+
+.packageContent--description{
+    max-width: 500px;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 768px){
+    .packageContent{
+        padding: 1rem;
+        min-height: 90vh;
+        background-image: url('../../Assets/Ellipse.svg');
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+
+    .packageContent--image{
+        width: 300px;
+    }
+
+    .position{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        min-width: 300px;
+    }
+
+    .packageContent--title{
+        padding: 1rem 0;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .packageContent{
+        padding: 1rem;
+        min-height: 80vh;
+        background-image: url('../../Assets/Ellipse.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    .packageContent--image{
+        width: 250px;
+    }
+
+    .position{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        min-width: 250px;
+    }
+}

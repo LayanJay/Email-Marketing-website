@@ -1,17 +1,24 @@
 import { Button, Grid } from "@material-ui/core";
 import React from "react";
+import "./PackageContent.css";
 
 function PackageContent({ title, description, image, button }) {
   return (
-    <div>
-      <Grid container md sm xs={12}>
-        <img src={image} alt="image" />
+    <Grid container className="packageContent" alignItems="center">
+      <Grid
+        container
+        md
+        sm
+        xs={12}
+        justify="center"
+        alignItems="center"
+        className="packageContent--image-grid"
+      >
+        <img src={image} alt={image} className="packageContent--image" />
       </Grid>
-      <Grid container md sm xs={12}>
-        <Grid md>
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </Grid>
+      <Grid container md sm xs={12} className="position">
+        <h2 className="packageContent--title">{title}</h2>
+        <p className="packageContent--description">{description}</p>
         <Button
           style={{
             backgroundColor: "transparent",
@@ -23,7 +30,7 @@ function PackageContent({ title, description, image, button }) {
           {button}
         </Button>
       </Grid>
-    </div>
+    </Grid>
   );
 }
 
