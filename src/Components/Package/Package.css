@@ -9,6 +9,25 @@
     text-align: center;
 }
 
+.faq--img-grid{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq--img{
+    width: 500px;
+    transition: 0.2s ease;
+}
+
+.faq--accordion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
 @media screen and (max-width: 768px){
     .package--header{
         height: 60vh;
@@ -16,6 +35,10 @@
 
     .header--styles{
         font-size: 30px;
+    }
+
+    .faq--img{
+        width: 400px;
     }
 }
 
@@ -26,5 +49,13 @@
 
     .header--styles{
         font-size: 25px;
+    }
+
+    .faq--img{
+        width: 300px;
+    }
+
+    .faq--accordion{
+        padding: 0 1rem 1rem 1rem;
     }
 }

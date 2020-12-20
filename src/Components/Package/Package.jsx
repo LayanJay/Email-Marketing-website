@@ -5,6 +5,9 @@ import PackageContent from "./PackageContent";
 import "./Package.css";
 import helpful_sign from "../../Assets/helpful_sign.svg";
 import pay_as_you_go from "../../Assets/pay_as_you_go.svg";
+import faq from "../../Assets/faq.svg";
+import FaqAccordion from "./FaqAccordion";
+import Footer from "../Footer/Footer";
 
 const packageDetails = {
   pacakge1: {
@@ -98,13 +101,14 @@ function Package() {
         />
       </Grid>
       <Grid container md={12}>
-        <Grid container md sm={12} xs={12}>
-          hey
+        <Grid container md sm={12} xs={12} className="faq--img-grid">
+          <img src={faq} alt="faq" className="faq--img" />
         </Grid>
-        <Grid container md sm={12} xs={12}>
-          hey
+        <Grid container md sm={12} xs={12} className="faq--accordion">
+          <FaqAccordion />
         </Grid>
       </Grid>
+      <Footer />
     </div>
   );
 }
