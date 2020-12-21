@@ -1,5 +1,5 @@
-import { Grid } from "@material-ui/core";
-import React from "react";
+import { Fade, Grid } from "@material-ui/core";
+import React, { useState } from "react";
 import PackageCard from "./PackageCard";
 import PackageContent from "./PackageContent";
 import "./Package.css";
@@ -8,6 +8,8 @@ import pay_as_you_go from "../../Assets/pay_as_you_go.svg";
 import faq from "../../Assets/faq.svg";
 import FaqAccordion from "./FaqAccordion";
 import Footer from "../Footer/Footer";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import { motion } from "framer-motion";
 
 const packageDetails = {
   pacakge1: {
@@ -50,7 +52,27 @@ const packageContent = {
   },
 };
 
+//motion variants
+const basicVariant = {
+  init: {
+    opacity: 0,
+    y: "5vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.7,
+      type: "spring",
+      // ease: "linear",
+      stiffness: 120,
+    },
+  },
+};
+
 function Package() {
+  const [imageActive, setImageActive] = useState(false);
   return (
     <div className="package">
       <Grid
@@ -61,8 +83,12 @@ function Package() {
         direction="column"
         className="package--header header--styles"
       >
-        <h1>We Make Your Idea</h1>
-        <h1>Happen</h1>
+        <motion.h1 variants={basicVariant} initial="init" animate="visible">
+          We Make Your Idea
+        </motion.h1>
+        <motion.h1 variants={basicVariant} initial="init" animate="visible">
+          Happen
+        </motion.h1>
       </Grid>
       <Grid container md={12} xs={12} className="package--cards">
         <PackageCard
@@ -70,18 +96,23 @@ function Package() {
           description={packageDetails.pacakge1.description}
           price={packageDetails.pacakge1.price}
           subtext={packageDetails.pacakge1.subtext}
+          timeout={500}
         />
+
         <PackageCard
           title={packageDetails.pacakge2.title}
           description={packageDetails.pacakge2.description}
           price={packageDetails.pacakge2.price}
           subtext={packageDetails.pacakge2.subtext}
+          timeout={1000}
         />
+
         <PackageCard
           title={packageDetails.pacakge3.title}
           description={packageDetails.pacakge3.description}
           price={packageDetails.pacakge3.price}
           subtext={packageDetails.pacakge3.subtext}
+          timeout={1500}
         />
       </Grid>
       <Grid container md={12} className="package--contents">
@@ -90,6 +121,7 @@ function Package() {
           title={packageContent.content1.title}
           description={packageContent.content1.description}
           button={packageContent.content1.button}
+          timeout={800}
         />
       </Grid>
       <Grid container md={12} className="package--contents">
@@ -98,12 +130,24 @@ function Package() {
           title={packageContent.content2.title}
           description={packageContent.content2.description}
           button={packageContent.content2.button}
+          timeout={800}
         />
       </Grid>
       <Grid container md={12}>
-        <Grid container md sm={12} xs={12} className="faq--img-grid">
-          <img src={faq} alt="faq" className="faq--img" />
-        </Grid>
+        <ReactVisibilitySensor
+          partialVisibility={true}
+          onChange={(isVisible) => {
+            if (isVisible) {
+              setImageActive(true);
+            }
+          }}
+        >
+          <Fade in={imageActive} {...(imageActive ? { timeout: 500 } : {})}>
+            <Grid container md sm={12} xs={12} className="faq--img-grid">
+              <img src={faq} alt="faq" className="faq--img" />
+            </Grid>
+          </Fade>
+        </ReactVisibilitySensor>
         <Grid container md sm={12} xs={12} className="faq--accordion">
           <FaqAccordion />
         </Grid>
