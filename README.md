@@ -1,5 +1,7 @@
 # In development..
 
+[Preview](http://localhost:3000)
+
 ## Available Scripts
 
 In the project directory, you can run:
