@@ -1,0 +1,40 @@
+.contentCard{
+    padding: 6%;
+}
+
+.contentCard--grid{
+    background-color: #F9D51C;
+    border-radius: 5px;
+}
+
+.contentCard--details{
+    padding: 2rem;
+}
+
+.contentCard--details-title{
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.contentCard--details-description{
+    margin-bottom: 2rem;
+}
+
+.contentCard--image-grid{
+    padding: 1rem;
+}
+
+.contentCard--image{
+    width: 75%;
+}
+
+@media screen and (max-width: 600px){
+    .contentCard--details{
+        padding: 1rem;
+    }
+    
+    .contentCard--details-title{
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+}
