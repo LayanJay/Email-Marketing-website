@@ -1,6 +1,5 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import email_send from "../../Assets/email_send.svg";
 import "./ContentCard.css";
 
 function ContentCard({ title, description, image }) {
