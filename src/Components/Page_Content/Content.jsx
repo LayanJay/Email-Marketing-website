@@ -1,6 +1,9 @@
-import { Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import ContentCard from "./ContentCard";
+import contentDetails from "./ContentDetails";
+import "./Content.css";
+import { Link } from "react-router-dom";
 
 function Content() {
   return (
@@ -11,20 +14,98 @@ function Content() {
         justify="center"
         alignItems="center"
         direction="column"
+        className="content--center"
       >
-        <Typography style={{ fontSize: "3rem" }}>Do it all with DAS</Typography>
-        <Typography variant="textSecondry">
+        <Typography
+          style={{ fontSize: "3rem", textAlign: "center", padding: "1rem 0" }}
+        >
+          Do it all with DAS
+        </Typography>
+        <Typography variant="textSecondry" className="content--typo">
           Bring your audience data, marketing channels, and insights together so
           you can reach your goals faster—all from a single platform.
         </Typography>
       </Grid>
       <Grid container md>
-        <ContentCard />
+        <ContentCard
+          title={contentDetails.contentCard1.title}
+          description={contentDetails.contentCard1.description}
+          image={contentDetails.contentCard1.image}
+        />
+        <ContentCard
+          title={contentDetails.contentCard2.title}
+          description={contentDetails.contentCard2.description}
+          image={contentDetails.contentCard2.image}
+        />
+        <ContentCard
+          title={contentDetails.contentCard3.title}
+          description={contentDetails.contentCard3.description}
+          image={contentDetails.contentCard3.image}
+        />
+        <ContentCard
+          title={contentDetails.contentCard4.title}
+          description={contentDetails.contentCard4.description}
+          image={contentDetails.contentCard4.image}
+        />
       </Grid>
-      {/* description -> image */}
-
-      {/* image -> description */}
-      {/* description -> image */}
+      <Grid
+        container
+        md
+        justify="center"
+        alignItems="center"
+        direction="column"
+        className="content--center"
+      >
+        <Typography
+          style={{ fontSize: "3rem", textAlign: "center", padding: "1rem 0" }}
+        >
+          Resources to give you the inside track
+        </Typography>
+        <Typography variant="textSecondry" className="content--typo">
+          Looking to get ahead? We have expert guidance, timely resources, and
+          inspiring stories from entrepreneurs who’ve been in your shoes.
+          Business-growing shoes.
+        </Typography>
+      </Grid>
+      <Grid
+        container
+        md
+        justify="center"
+        direction="column"
+        className="content--center"
+        style={{
+          backgroundColor: "#2F2E41",
+          color: "#eee",
+          minHeight: "400px",
+          marginTop: "2rem",
+        }}
+      >
+        <Typography
+          variant="h1"
+          style={{
+            fontSize: "3.5rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            padding: "1rem 0",
+          }}
+        >
+          Let’s do this
+        </Typography>
+        <Typography variant="textSecondry" className="content--typo">
+          Every big idea starts with a small step forward.
+        </Typography>
+        <Link to="/Package" className="content--link">
+          <Button
+            style={{
+              backgroundColor: "#fdd835",
+              color: "#001835",
+              padding: "0.7rem 1.5rem",
+            }}
+          >
+            pick a plan
+          </Button>
+        </Link>
+      </Grid>
     </div>
   );
 }

@@ -1,10 +1,12 @@
 .contentCard{
     padding: 6%;
+    /* margin-bottom: 20px; */
 }
 
 .contentCard--grid{
     background-color: #F9D51C;
     border-radius: 5px;
+    min-height: 400px;
 }
 
 .contentCard--details{
@@ -21,7 +23,7 @@
 }
 
 .contentCard--image-grid{
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .contentCard--image{
