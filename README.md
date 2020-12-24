@@ -7,6 +7,8 @@
 ![screenshot](./screenshots/ss4.PNG)
 ![screenshot](./screenshots/ss5.PNG)
 
+_for more screen shots go to the screenshots folder..._
+
 ## Available Scripts
 
 In the project directory, you can run:
