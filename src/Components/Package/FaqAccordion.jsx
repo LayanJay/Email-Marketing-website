@@ -38,6 +38,7 @@ function FaqAccordion() {
   return (
     <ReactVisibilitySensor
       partialVisibility={true}
+      offset={{ top: 50 }}
       onChange={(isVisible) => {
         if (isVisible) {
           setActive(true);

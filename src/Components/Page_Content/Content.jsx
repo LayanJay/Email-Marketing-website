@@ -1,4 +1,4 @@
-import { Button, Grid, TextField, Typography } from "@material-ui/core";
+import { Button, Grid, Grow, TextField, Typography } from "@material-ui/core";
 import React from "react";
 import ContentCard from "./ContentCard";
 import contentDetails from "./ContentDetails";
@@ -6,8 +6,10 @@ import Footer from "../Footer/Footer";
 import "./Content.css";
 import { Link } from "react-router-dom";
 import newsletter from "../../Assets/newsletter.svg";
+import ReactVisibilitySensor from "react-visibility-sensor";
 
 function Content() {
+  const [active, setActive] = React.useState(false);
   return (
     <div>
       <Grid
@@ -109,56 +111,72 @@ function Content() {
         </Link>
       </Grid>
       <div className="content--grid-div">
-        <Grid container md direction="row" className="content--grid">
-          <Grid
-            container
-            md
-            sm={12}
-            xs={12}
-            justify="center"
-            alignItems="center"
-            className="content--image-grid"
-          >
-            <img src={newsletter} alt="newsletter" className="content--image" />
-          </Grid>
-          <Grid
-            container
-            md
-            sm={12}
-            xs={12}
-            alignItems="baseline"
-            direction="column"
-            justify="center"
-            className="content--details"
-          >
-            <h2 className="content--details-title">
-              Subscribe to our newsletter
-            </h2>
-            <p className="content--details-description">
-              Signup for our weekly newsletter to get the latest news, updates
-              and amazing offers delivered directly in your inbox.
-            </p>
-            <form className="content--form">
-              <TextField
-                type="Email"
-                variant="outlined"
-                color="primary"
-                label="Email"
-                style={{ margin: "0 0 1rem 0", width: 250 }}
-              />
-              <Button
-                style={{
-                  backgroundColor: "#0074FC",
-                  color: "#ffffff",
-                  margin: "0 0 1rem 0",
-                  padding: "0.7rem 1.5rem",
-                }}
+        <ReactVisibilitySensor
+          partialVisibility={true}
+          offset={{ top: 60 }}
+          onChange={(isVisible) => {
+            if (isVisible) {
+              setActive(true);
+            }
+          }}
+        >
+          <Grow in={active} {...(active ? { timeout: 700 } : {})}>
+            <Grid container md direction="row" className="content--grid">
+              <Grid
+                container
+                md
+                sm={12}
+                xs={12}
+                justify="center"
+                alignItems="center"
+                className="content--image-grid"
               >
-                Sign In
-              </Button>
-            </form>
-          </Grid>
-        </Grid>
+                <img
+                  src={newsletter}
+                  alt="newsletter"
+                  className="content--image"
+                />
+              </Grid>
+              <Grid
+                container
+                md
+                sm={12}
+                xs={12}
+                alignItems="baseline"
+                direction="column"
+                justify="center"
+                className="content--details"
+              >
+                <h2 className="content--details-title">
+                  Subscribe to our newsletter
+                </h2>
+                <p className="content--details-description">
+                  Signup for our weekly newsletter to get the latest news,
+                  updates and amazing offers delivered directly in your inbox.
+                </p>
+                <form className="content--form">
+                  <TextField
+                    type="Email"
+                    variant="outlined"
+                    color="primary"
+                    label="Email"
+                    style={{ margin: "0 0 1rem 0", width: 250 }}
+                  />
+                  <Button
+                    style={{
+                      backgroundColor: "#0074FC",
+                      color: "#ffffff",
+                      margin: "0 0 1rem 0",
+                      padding: "0.7rem 1.5rem",
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </form>
+              </Grid>
+            </Grid>
+          </Grow>
+        </ReactVisibilitySensor>
       </div>
       <Footer />
     </div>

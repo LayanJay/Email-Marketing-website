@@ -8,6 +8,7 @@ function PackageContent({ title, description, image, button, timeout }) {
   return (
     <VisibilitySensor
       partialVisibility={true}
+      offset={{ top: 50 }}
       onChange={(isVisible) => {
         if (isVisible) {
           setActive(true);

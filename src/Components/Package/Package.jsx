@@ -1,4 +1,4 @@
-import { Fade, Grid } from "@material-ui/core";
+import { Grid, Grow } from "@material-ui/core";
 import React, { useState } from "react";
 import PackageCard from "./PackageCard";
 import PackageContent from "./PackageContent";
@@ -8,7 +8,7 @@ import pay_as_you_go from "../../Assets/pay_as_you_go.svg";
 import faq from "../../Assets/faq.svg";
 import FaqAccordion from "./FaqAccordion";
 import Footer from "../Footer/Footer";
-import ReactVisibilitySensor from "react-visibility-sensor";
+import VisibilitySensor from "react-visibility-sensor";
 import { motion } from "framer-motion";
 
 const packageDetails = {
@@ -134,20 +134,21 @@ function Package() {
         />
       </Grid>
       <Grid container md={12}>
-        <ReactVisibilitySensor
+        <VisibilitySensor
           partialVisibility={true}
+          offset={{ top: 100 }}
           onChange={(isVisible) => {
             if (isVisible) {
               setImageActive(true);
             }
           }}
         >
-          <Fade in={imageActive} {...(imageActive ? { timeout: 500 } : {})}>
+          <Grow in={imageActive} {...(imageActive ? { timeout: 600 } : {})}>
             <Grid container md sm={12} xs={12} className="faq--img-grid">
               <img src={faq} alt="faq" className="faq--img" />
             </Grid>
-          </Fade>
-        </ReactVisibilitySensor>
+          </Grow>
+        </VisibilitySensor>
         <Grid container md sm={12} xs={12} className="faq--accordion">
           <FaqAccordion />
         </Grid>
