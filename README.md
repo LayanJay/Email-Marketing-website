@@ -1,6 +1,11 @@
-# In development..
+# WEB template for Email Marketing
 
 [Preview](https://das-email-marketing.netlify.app/)
+
+![screenshot](./screenshots/ss1.PNG)
+![screenshot](./screenshots/ss2.PNG)
+![screenshot](./screenshots/ss4.PNG)
+![screenshot](./screenshots/ss5.PNG)
 
 ## Available Scripts
 
